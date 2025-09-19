@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>btnLoadClasses</class>
+ <widget class="QMainWindow" name="btnLoadClasses">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>859</width>
+    <height>612</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>-50</x>
+      <y>0</y>
+      <width>901</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
+     <item>
+      <widget class="QWidget" name="videoHost" native="true"/>
+     </item>
+     <item>
+      <widget class="QFrame" name="menuFrame">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QGroupBox" name="grpInfer">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>190</y>
+          <width>341</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Tahmin</string>
+        </property>
+        <widget class="QWidget" name="rowInfer" native="true">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>341</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btnLoadModel">
+            <property name="text">
+             <string>Model Yükle</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnPredict">
+            <property name="text">
+             <string>Tahmin</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QPlainTextEdit" name="txtPredLog">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>90</y>
+           <width>211</width>
+           <height>131</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="lblPred">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>90</y>
+           <width>131</width>
+           <height>131</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="horizontalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>341</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="btnPredFromDir">
+            <property name="text">
+             <string>Klasörden Toplu Tahmin</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnPredFromList">
+            <property name="text">
+             <string>Listeden Toplu Tahmin</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="grpCapture">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>341</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Çekim</string>
+        </property>
+        <widget class="QWidget" name="rowBtn" native="true">
+         <property name="geometry">
+          <rect>
+           <x>12</x>
+           <y>31</y>
+           <width>271</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnSnap">
+            <property name="text">
+             <string>btnSnap</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBurstStart">
+            <property name="text">
+             <string>btnBurstStart</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBurstStop">
+            <property name="text">
+             <string>btnStop</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="rowIC" native="true">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblInterval">
+            <property name="text">
+             <string>Aralık:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBurstInterval">
+            <property name="suffix">
+             <string>ms</string>
+            </property>
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>5000</number>
+            </property>
+            <property name="singleStep">
+             <number>50</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblCount">
+            <property name="text">
+             <string>Adet:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBurstCount">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string>Adet:</string>
+            </property>
+            <property name="value">
+             <number>99</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="rowClass" native="true">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>321</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblClass">
+            <property name="text">
+             <string>Sınıf:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbLabel">
+            <item>
+             <property name="text">
+              <string>person</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>background</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="grpTrain">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>330</y>
+          <width>261</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Eğitim</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="btnTrain">
+           <property name="text">
+            <string>Eğitimi Başlat</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>291</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="btnChooseDir">
+           <property name="text">
+            <string>Klasör Seç</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QTabWidget" name="tabAnnot">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>10</y>
+          <width>271</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>tabInternal</string>
+         </attribute>
+         <widget class="QPushButton" name="btnOpenAnnotator">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>200</y>
+            <width>201</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Ayrı Pencerede Aç</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnCompareLI">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>160</y>
+            <width>191</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Karşılaştır</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>tabLabelImg</string>
+         </attribute>
+         <widget class="QGroupBox" name="gbLabel">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>301</width>
+            <height>291</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="title">
+           <string>Etiketleme</string>
+          </property>
+          <widget class="QLineEdit" name="leClasses">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>90</y>
+             <width>161</width>
+             <height>24</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="leLabels">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>120</y>
+             <width>161</width>
+             <height>24</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnStartLabel">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>160</y>
+             <width>251</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Etiketlemeyi Başlat</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="leImages">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>161</width>
+             <height>24</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnPickImages">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>60</y>
+             <width>81</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Seç</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnPickClasses">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>90</y>
+             <width>80</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Seç</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnPickLabels">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>120</y>
+             <width>80</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Seç</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblLabelCount">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>230</y>
+             <width>241</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Etiket dosyası: 0</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="cbFormat">
+           <property name="geometry">
+            <rect>
+             <x>12</x>
+             <y>31</y>
+             <width>151</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>YOLO</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PascalVOC</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QPushButton" name="btnStartLabelImg">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>200</y>
+             <width>201</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>LabelImg ile Etiketlemeyi Başlat</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>859</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockAnnotator">
+   <property name="minimumSize">
+    <size>
+     <width>51</width>
+     <height>144</height>
+    </size>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <widget class="QWidget" name="barTop" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>91</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>36</horstretch>
+       <verstretch>36</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="btnAnnotOpen">
+        <property name="text">
+         <string>Görsel Aç</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAnnotOpenDir">
+        <property name="text">
+         <string>Klasör Aç</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAnnotPrev">
+        <property name="text">
+         <string>← Önceki</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAnnotNext">
+        <property name="text">
+         <string>Sonraki →</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAnnotSave">
+        <property name="text">
+         <string>Kaydet</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnBackToDock">
+        <property name="text">
+         <string>← Geri Dön</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="AnnotatorWidget" name="annotView">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>0</y>
+       <width>301</width>
+       <height>401</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+       <horstretch>36</horstretch>
+       <verstretch>36</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+    <widget class="QWidget" name="panelRight" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>-10</y>
+       <width>421</width>
+       <height>421</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Etiket çizerken her zaman bu sınıfı otomatik uygula</string>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>371</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QComboBox" name="cmbClass"/>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="lblClassTitle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>291</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sınıf</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chkUseDefault">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>80</y>
+        <width>361</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Varsayılan sınıf kullan</string>
+      </property>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>140</y>
+        <width>371</width>
+        <height>242</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Boxes</string>
+       </attribute>
+       <widget class="QFrame" name="lineRight1">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>361</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::HLine</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblBoxes">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>50</y>
+          <width>361</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Box List</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="listBoxes">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>80</y>
+          <width>371</width>
+          <height>141</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <property name="tab-5" stdset="0">
+        <string/>
+       </property>
+       <attribute name="title">
+        <string>Files</string>
+       </attribute>
+       <widget class="QFrame" name="lineRight2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>361</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::HLine</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblFiles">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>361</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>File List</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="listFiles">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>90</y>
+          <width>291</width>
+          <height>121</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblCounter">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>90</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>1 / N</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Log</string>
+       </attribute>
+       <widget class="QLabel" name="lblAnnotInfo_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>361</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Hazır.</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="txtLog">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>49</y>
+          <width>371</width>
+          <height>171</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblAnnotInfo">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>230</y>
+          <width>361</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>20</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="txtDefaultClass">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>110</y>
+        <width>371</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AnnotatorWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>annotatorwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnOpenAnnotator</sender>
+   <signal>clicked()</signal>
+   <receiver>dockAnnotator</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>709</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>841</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnBackToDock</sender>
+   <signal>clicked()</signal>
+   <receiver>dockAnnotator</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>899</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>858</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnOpenAnnotator</sender>
+   <signal>clicked()</signal>
+   <receiver>menuFrame</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnOpenAnnotator</sender>
+   <signal>clicked()</signal>
+   <receiver>videoHost</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>657</x>
+     <y>279</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

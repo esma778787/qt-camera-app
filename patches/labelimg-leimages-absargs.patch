@@ -1,0 +1,51 @@
+diff --git a/mainwindow.cpp b/mainwindow.cpp
+--- a/mainwindow.cpp
++++ b/mainwindow.cpp
+@@ -0,0 +0,0 @@
+@@ -1,7 +1,7 @@
+ /* dummy header to help context matching */
+ 
+@@ -670,12 +670,17 @@
+                 if (imgs.isEmpty()) {
+                     QMessageBox::information(this, tr("Bo?? klas??r"),
+                                              tr("Bu klas??rde desteklenen g??rsel bulunamad??."));
+                     return;
+                 }
+ 
++                // >>> YEN??: Annotator'da se??ti??in klas??r?? leImages'a da yaz
++                if (ui->leImages)
++                    ui->leImages->setText(QDir::toNativeSeparators(dir));
++
+                 // 1) ??nce format
+                 if (ui->cbFormat) annot->setFormat(ui->cbFormat->currentText());
+ 
+                 // 2) Save dir (UI yaz + widget'a ver)
+                 QString out;
+@@ -1185,13 +1190,25 @@
+     if (!QFileInfo::exists(resPy) && QFileInfo::exists(resQrc) && QFileInfo::exists(pyrcc)) {
+         QProcess::execute(pyrcc, QStringList() << "-o" << resPy << resQrc);
+     }
+ 
+-    // Arg??manlar?? haz??rla
+-    QStringList args;
+-    args << entryPy;
+-    if (!imagesDir.isEmpty())   args << imagesDir;
+-    if (!classesPath.isEmpty()) args << classesPath;
+-    if (!saveDir.isEmpty())     args << saveDir;
++    // Arg??manlar?? haz??rlarken mutlak yola ??evir + logla
++    QString imagesAbs  = imagesDir.isEmpty()   ? QString() : QDir::toNativeSeparators(QFileInfo(imagesDir).absoluteFilePath());
++    QString classesAbs = classesPath.isEmpty() ? QString() : QDir::toNativeSeparators(QFileInfo(classesPath).absoluteFilePath());
++    QString saveAbs    = saveDir.isEmpty()     ? QString() : QDir::toNativeSeparators(QFileInfo(saveDir).absoluteFilePath());
++
++    QStringList args;
++    args << entryPy;
++    if (!imagesAbs.isEmpty())  args << imagesAbs;
++    if (!classesAbs.isEmpty()) args << classesAbs;
++    if (!saveAbs.isEmpty())    args << saveAbs;
++
++    // Te??his logu
++    if (ui->txtPredLog) {
++        ui->txtPredLog->appendPlainText("[launchLabelImg] imagesDir = " + (imagesAbs.isEmpty() ? "<empty>" : imagesAbs));
++        ui->txtPredLog->appendPlainText("[launchLabelImg] classes   = " + (classesAbs.isEmpty() ? "<empty>" : classesAbs));
++        ui->txtPredLog->appendPlainText("[launchLabelImg] saveDir   = " + (saveAbs.isEmpty() ? "<empty>" : saveAbs));
++    }

@@ -1,0 +1,17 @@
+# Build & generated
+build/
+*.o
+*.exe
+*.pro.user
+*.user
+
+# Python venv
+venv/
+
+# VS Code
+.vscode/
+
+# Datasets / outputs (isteðe baðlý)
+dataset/
+images_to_label/
+model_out/
